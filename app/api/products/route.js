@@ -4,10 +4,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { isAdminRequest } from "../auth/[...nextauth]/route";
 
 export async function POST(req) {
-  // console.log(req.body);
   const { title, description, price, images, category, properties } =
     await req.json();
-  // console.log(title, description, price, JSON.stringify(images));
   mongooseConnect();
   await isAdminRequest();
 

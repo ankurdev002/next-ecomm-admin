@@ -71,7 +71,6 @@ function CategoryPage({ swal }) {
       .then(async (result) => {
         if (result.isConfirmed) {
           const { _id } = categoryData;
-          console.log(_id);
           await axios.delete("/api/categories?_id=" + _id);
           fetchCategories();
         }

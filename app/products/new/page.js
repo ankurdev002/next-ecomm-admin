@@ -41,20 +41,17 @@ export default function NewProducts() {
       category,
       properties: productProperties,
     };
-    // console.log(data);
     try {
-      await axios.post("http://localhost:3000/api/products", data);
+      await axios.post("api/products", data);
       setGoToProducts(true);
     } catch (error) {
       console.log("Error: Could not retrieve the page.");
-      // Display an error message to the user
     }
   };
 
   if (goToProducts) {
     router.push("/products");
   }
-  // console.log(images, "aerrd");
 
   const removeImage = (index) => {
     const updatedImages = [...images];
@@ -78,13 +75,10 @@ export default function NewProducts() {
       }
     );
     const res2 = await res.json();
-    // console.log(res2);
     setImages([...images, res2.url]);
     setUploading(false);
     return res2.url;
   };
-  // console.log(cloudimages);
-  // console.log(images);
 
   const updateImagesOrder = (images) => {
     setImages(images);
@@ -110,8 +104,6 @@ export default function NewProducts() {
       CatInfo = parentCat;
     }
   }
-
-  // console.log("length", propertiesData.length);
 
   return (
     <Layout>

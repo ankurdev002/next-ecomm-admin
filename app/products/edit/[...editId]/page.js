@@ -22,13 +22,11 @@ export default function EditPage(props) {
   const [Categories, setCategories] = useState([]);
   const [productProperties, setProductProperties] = useState({});
 
-  // console.log(category);
   const router = useRouter();
   const productId = props.params.editId[0];
 
   useEffect(() => {
     axios.get("/api/products/" + productId).then((res) => {
-      // console.log(res.data);
       setTitle(res.data.title);
       setDescription(res.data.description);
       setPrice(res.data.price);
@@ -41,7 +39,6 @@ export default function EditPage(props) {
       setCategories(result.data);
     });
   }, [productId]);
-  // console.log(productId);
 
   if (!productId) {
     return;
@@ -57,7 +54,7 @@ export default function EditPage(props) {
       category,
       properties: productProperties,
     };
-    // console.log(data);
+
     let response = await axios.put("/api/products/" + productId, data);
     if (response) {
       alert("product updated successfully");
@@ -87,7 +84,7 @@ export default function EditPage(props) {
       }
     );
     const res2 = await res.json();
-    // console.log(res2);
+
     setImages([...images, res2.url]);
     setUploading(false);
 

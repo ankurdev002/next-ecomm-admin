@@ -49,8 +49,6 @@ export async function DELETE(req, res) {
   mongooseConnect();
   await isAdminRequest();
 
-  // console.log(_id);
-
   await Category.deleteOne({ _id });
   return NextResponse.json("ok");
 }
