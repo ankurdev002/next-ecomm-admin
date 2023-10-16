@@ -42,7 +42,7 @@ export default function NewProducts() {
       properties: productProperties,
     };
     try {
-      await axios.post("api/products", data);
+      await axios.post("/api/products", data);
       setGoToProducts(true);
     } catch (error) {
       console.log("Error: Could not retrieve the page.");
