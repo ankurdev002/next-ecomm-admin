@@ -156,6 +156,12 @@ label {
   box-shadow: 0 6px 30px -10px #5890b6 inset;
 }
 
+.toast-message-error {
+  background: var(--greenlg);
+  color: var(--lightblk);
+  box-shadow: 0 0 5px var(--lightg) inset;
+}
+
 .l {
   background-color: var(--greenlg);
   color: var(--lightblk);
@@ -1068,200 +1074,6 @@ select {
   background: linear-gradient(#0ccda3, #c1fcd3);
 }
 
-@media only screen and (max-width: 600px) and (min-width: 350px) {
-  .header {
-    font-size: 0.5rem;
-  }
-  .cat-height {
-    height: 35%;
-  }
-  .products {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 0 2%;
-  }
-  .table-products-list .products {
-    min-height: 17.5%;
-  }
-
-  .products li:nth-child(3) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .orders {
-    font-size: 0.65rem;
-  }
-  .container-grid {
-    gap: 10px;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 95%;
-  }
-  .total-count {
-    flex-direction: row;
-    width: 100%;
-    height: 10%;
-  }
-  .total-price {
-    justify-content: center;
-    flex-direction: row;
-    width: 20%;
-    height: 100%;
-  }
-  .icon-counter {
-    padding: 5px;
-    justify-content: space-around;
-    height: 100%;
-    align-items: center;
-    width: 100%;
-  }
-  .color-heading {
-    font-size: 0.5rem;
-    line-height: normal;
-  }
-  .graphs-represent {
-    width: 100%;
-    gap: 10px;
-    height: 65%;
-  }
-  .cricular-bar-data {
-    flex-direction: row;
-    width: 100%;
-    height: 20%;
-    justify-content: space-between;
-  }
-  .orders-all {
-    width: 30%;
-    height: 100%;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-
-  .orders-all text:nth-child(1),
-  .revenue-sales text:nth-child(1),
-  .daily-sales text:nth-child(1) {
-    font-size: 0.75rem;
-  }
-
-  .orders-all text:nth-child(2),
-  .daily-sales text:nth-child(2) {
-    font-size: 1rem;
-  }
-
-  .revenue-sales text:nth-child(2) {
-    font-size: 0.75rem;
-  }
-
-  .revenue-sales {
-    width: 30%;
-    height: 100%;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-  .daily-sales {
-    width: 30%;
-    height: 100%;
-    background: transparent;
-    border: 0;
-  }
-  .height-data {
-    height: 93vh;
-  }
-
-  .table-orders-list-main {
-    height: 94.5%;
-  }
-}
-
-@media only screen and (max-width: 800px) and (min-width: 601px) {
-  .header {
-    font-size: 0.75rem;
-  }
-  .cat-height {
-    height: 35%;
-  }
-  .container-grid {
-    gap: 10px;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 95%;
-  }
-  .total-count {
-    flex-direction: row;
-    width: 100%;
-    height: 10%;
-  }
-  .total-price {
-    justify-content: center;
-    flex-direction: row;
-    width: 20%;
-    height: 100%;
-  }
-  .icon-counter {
-    padding: 5px;
-    justify-content: space-around;
-    height: 100%;
-    align-items: center;
-    width: 100%;
-  }
-  .color-heading {
-    font-size: 0.5rem;
-    line-height: normal;
-  }
-  .graphs-represent {
-    width: 100%;
-    gap: 10px;
-    height: 65%;
-  }
-  .cricular-bar-data {
-    flex-direction: row;
-    width: 100%;
-    height: 20%;
-    justify-content: space-between;
-  }
-  .orders-all {
-    width: 30%;
-    height: auto;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-
-  .orders-all text:nth-child(1),
-  .revenue-sales text:nth-child(1),
-  .daily-sales text:nth-child(1) {
-    font-size: 0.75rem;
-  }
-  .revenue-sales {
-    width: 30%;
-    height: auto;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-  .daily-sales {
-    width: 30%;
-    height: auto;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-  .height-data {
-    height: 93vh;
-  }
-
-  .table-orders-list-main {
-    height: 94.5%;
-  }
-}
-
 .theme-container {
   width: 70px;
   height: 70px;
@@ -1360,4 +1172,560 @@ select {
   transition: all 2s ease-in-out;
   background: #1a1d20;
   border: 1px solid var(--lightblk);
+}
+
+.loaders-container-main {
+  position: relative;
+  height: 95%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1% 2%;
+  padding-right: 1%;
+  border: 1px solid lightgray;
+  margin-top: 1%;
+  align-items: center;
+}
+
+.loaders-container-main-cate {
+  position: relative;
+  height: 55%;
+  border: 1px solid lightgray;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1% 2%;
+  padding-right: 1%;
+  margin-top: 1%;
+  align-items: center;
+}
+.disabled {
+  pointer-events: none;
+}
+.loaders-container-main-ord {
+  position: relative;
+  height: 97.5%;
+  border: 1px solid lightgray;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1% 2%;
+  padding-right: 1%;
+  margin-top: 1%;
+  align-items: center;
+}
+
+.left_back {
+  background-image: url(../app/assets/shape-2.png);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50%;
+  height: 100%;
+  transform-origin: center;
+  animation: gradients 15s ease infinite;
+  color: #3b3b3b;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+@keyframes gradients {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes gradientserv {
+  0% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.right_back {
+  background-image: url(../app/assets/shape-3.png);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50%;
+  height: 100%;
+  animation: gradientserv 15s ease infinite;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.loaders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.loaders svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  transform: rotate(-45deg);
+  font-size: 150px;
+  animation: brezze 2.1s ease infinite;
+}
+
+.svg-l {
+  color: black;
+}
+
+.svg-d {
+  fill: white;
+}
+
+@keyframes brezze {
+  0% {
+    color: white;
+  }
+  25% {
+    color: #a1d4e6;
+  }
+  50% {
+    scale: 1.1;
+    color: #a1d4e6;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+.loading {
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+}
+
+.loading-l {
+  background: var(--greenlg);
+  background-clip: border-box;
+  color: var(--lightblk);
+  border: 2px solid transparent;
+  border: 1px solid var(--greenlg);
+  background-clip: padding-box;
+  box-shadow: 0 0 0 4px var(--greenlg);
+}
+
+.loading-d {
+  background: var(--lightblk);
+  background-clip: border-box;
+  color: white;
+  border: 2px solid transparent;
+  border: 1px solid var(--lightblk);
+  background-clip: padding-box;
+  box-shadow: 0 0 0 4px var(--lightblk);
+}
+
+.loading span {
+  position: absolute;
+
+  overflow: hidden;
+}
+
+.loading span:nth-child(1)::before {
+  content: "";
+  position: relative;
+  width: 5px;
+  height: 5px;
+  z-index: 1000;
+  border-radius: 50%;
+}
+
+.loading span:nth-child(2)::before {
+  content: "";
+  position: relative;
+  width: 5px;
+  height: 5px;
+  z-index: 1000;
+  background: #00bfff;
+  border-radius: 50%;
+  background: #00bfff;
+  box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff,
+    0 0 80px #00bfff, 0 0 100px #00bfff, 0 0 0 5px rgba(0, 162, 255, 0.5);
+}
+
+.loading span:nth-child(3)::before {
+  content: "";
+  position: relative;
+  width: 5px;
+  height: 5px;
+  z-index: 1000;
+  background: #00bfff;
+  border-radius: 50%;
+  background: #00bfff;
+  box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff,
+    0 0 80px #00bfff, 0 0 100px #00bfff, 0 0 0 5px rgba(0, 162, 255, 0.5);
+}
+
+.loading span:nth-child(4)::before {
+  content: "";
+  position: relative;
+  width: 5px;
+  height: 5px;
+
+  z-index: 1000;
+  background: #00bfff;
+  border-radius: 50%;
+  background: #00bfff;
+  box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff,
+    0 0 80px #00bfff, 0 0 100px #00bfff, 0 0 0 5px rgba(0, 162, 255, 0.5);
+}
+
+.loadingspan-l {
+  background: linear-gradient(90deg, transparent, #f5f5f4);
+}
+
+.loadingspan-d {
+  background: linear-gradient(90deg, transparent, #0ccda3);
+}
+
+.loading span:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+.loading span:nth-child(2) {
+  top: -100%;
+  display: flex;
+  align-items: flex-end;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  animation: animate2 2s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+.loading span:nth-child(3) {
+  display: flex;
+  justify-content: flex-start;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  animation: animate3 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.loading span:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  animation: animate4 2s linear infinite;
+  animation-delay: 1.5s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.res-chart-heading {
+  font-size: initial;
+  text-align: center;
+}
+
+.res-chart-heading-sub {
+  font-size: initial;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 350px) {
+  .header {
+    font-size: 0.5rem;
+  }
+  .cat-height {
+    height: 35%;
+  }
+  .loading {
+    height: 50px;
+    width: 50px;
+  }
+
+  .loaders svg {
+    font-size: 30px;
+  }
+
+  .products {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 2%;
+  }
+  .table-products-list .products {
+    min-height: 17.5%;
+  }
+
+  .products li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .orders {
+    font-size: 0.65rem;
+  }
+  .container-grid {
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+  }
+  .total-count {
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+  }
+  .total-price {
+    justify-content: center;
+    flex-direction: row;
+    width: 20%;
+    height: 100%;
+  }
+  .icon-counter {
+    padding: 5px;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+  }
+  .color-heading {
+    font-size: 0.5rem;
+    line-height: normal;
+  }
+  .graphs-represent {
+    width: 100%;
+    gap: 10px;
+    height: 65%;
+  }
+  .cricular-bar-data {
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+    justify-content: space-between;
+  }
+  .orders-all {
+    width: 30%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .orders-all text:nth-child(1),
+  .revenue-sales text:nth-child(1),
+  .daily-sales text:nth-child(1) {
+    font-size: 0.75rem;
+  }
+
+  .orders-all text:nth-child(2),
+  .daily-sales text:nth-child(2) {
+    font-size: 1rem;
+  }
+
+  .revenue-sales text:nth-child(2) {
+    font-size: 0.75rem;
+  }
+
+  .revenue-sales {
+    width: 30%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .daily-sales {
+    width: 30%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+  }
+  .height-data {
+    height: 93vh;
+  }
+
+  .table-orders-list-main {
+    height: 94.5%;
+  }
+
+  .res-chart-heading {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .res-chart-heading-sub {
+    font-size: 8px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 601px) {
+  .header {
+    font-size: 0.75rem;
+  }
+  .cat-height {
+    height: 35%;
+  }
+
+  .res-chart-heading {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .res-chart-heading-sub {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .loading {
+    height: 100px;
+    width: 100px;
+  }
+
+  .loaders svg {
+    font-size: 70px;
+  }
+
+  .container-grid {
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+  }
+  .total-count {
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+  }
+  .total-price {
+    justify-content: center;
+    flex-direction: row;
+    width: 20%;
+    height: 100%;
+  }
+  .icon-counter {
+    padding: 5px;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+  }
+  .color-heading {
+    font-size: 0.5rem;
+    line-height: normal;
+  }
+  .graphs-represent {
+    width: 100%;
+    gap: 10px;
+    height: 65%;
+  }
+  .cricular-bar-data {
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+    justify-content: space-between;
+  }
+  .orders-all {
+    width: 30%;
+    height: auto;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .orders-all text:nth-child(1),
+  .revenue-sales text:nth-child(1),
+  .daily-sales text:nth-child(1) {
+    font-size: 0.75rem;
+  }
+  .revenue-sales {
+    width: 30%;
+    height: auto;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .daily-sales {
+    width: 30%;
+    height: auto;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .height-data {
+    height: 93vh;
+  }
+
+  .table-orders-list-main {
+    height: 94.5%;
+  }
 }

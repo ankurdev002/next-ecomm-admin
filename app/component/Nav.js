@@ -21,9 +21,9 @@ export default function Nav({ show }) {
   async function logout() {
     await router.refresh("/");
     await router.push("/");
-
     await signOut();
   }
+
   return (
     <aside
       className={
@@ -122,7 +122,11 @@ export default function Nav({ show }) {
         </Link>
         <Link
           href={"/settings"}
-          className={pathName.includes("/settings") ? activeLink : inactiveLink}
+          className={
+            pathName.includes("/settings")
+              ? activeLink + " disabled"
+              : inactiveLink + " disabled"
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,14 @@
 "use client";
 import Layout from "@/app/component/Layout";
+import { ContextData } from "@/app/component/context/Context.";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function DeleteProductPage(props) {
+  const { sun, mode } = useContext(ContextData);
+
   const router = useRouter();
   const [productInfo, setProductInfo] = useState();
   const id = props.params.deleteid;
@@ -17,8 +21,20 @@ export default function DeleteProductPage(props) {
   const deleteRecord = async () => {
     let response = await axios.delete("/api/products/" + id);
     if (response) {
-      alert("record deleted successfully");
-      router.push("/products");
+      toast.error("Deleted Product Successfully", {
+        style: {
+          backgroundColor: mode == sun ? "var(--lightg)" : "var(--lightblk)", // Use the CSS variable for the background color
+          color: mode == sun ? "var(--lightblk)" : "var(--ligcont)",
+          boxShadow:
+            mode == sun
+              ? "0 0 5px var(--lightg) inset"
+              : "0 0 5px var(--ligcont) inset", // Use the CSS variable for the text color
+        },
+        position: toast.POSITION.TOP_CENTER,
+      });
+      setTimeout(() => {
+        router.push("/products");
+      }, 2000);
     }
   };
 

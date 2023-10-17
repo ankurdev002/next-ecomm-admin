@@ -5,14 +5,18 @@ import { useContext, useState } from "react";
 import Logo from "./Logo";
 import { ContextData } from "./context/Context.";
 import Image from "next/image";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Layout({ children }) {
   const { sun, mode } = useContext(ContextData);
 
   const { data: session } = useSession();
   const [showNav, setShowNav] = useState(false);
+
   return (
     <>
+      <ToastContainer />
       {!session ? (
         <div className=" w-screen h-screen flex items-center justify-center">
           <div className="text-center">

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
+import { toast } from "react-toastify";
 
 export default function NewProducts() {
   const { sun, mode } = useContext(ContextData);
@@ -42,10 +43,33 @@ export default function NewProducts() {
       properties: productProperties,
     };
     try {
-      await axios.post("/api/products", data);
-      setGoToProducts(true);
+      let response = await axios.post("/api/products", data);
+      setTimeout(() => {
+        setGoToProducts(true);
+      }, 2000);
+
+      if (response) {
+        toast.success("Added Product Successfully", {
+          style: {
+            backgroundColor: mode == sun ? "var(--lightg)" : "var(--lightblk)", // Use the CSS variable for the background color
+            color: mode == sun ? "var(--lightblk)" : "var(--ligcont)",
+            boxShadow:
+              mode == sun
+                ? "0 0 5px var(--lightg) inset"
+                : "0 0 5px var(--ligcont) inset", // Use the CSS variable for the text color
+          },
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
     } catch (error) {
       console.log("Error: Could not retrieve the page.");
+      toast.error("Please Fill Correct Details", {
+        style: {
+          backgroundColor: mode == sun ? "var(--lightg)" : "var(--lightblk)", // Use the CSS variable for the background color
+          color: mode == sun ? "var(--lightblk)" : "var(--ligcont)", // Use the CSS variable for the text color
+        },
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   };
 

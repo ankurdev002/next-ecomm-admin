@@ -22,5 +22,5 @@ export async function POST() {
     { upsert: true, new: true }
   );
   const count = updatedResult ? updatedResult.count : 0;
-  return NextResponse.json({ count: vistorCount });
+  return NextResponse.json({ count: count });
 }

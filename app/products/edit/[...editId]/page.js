@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
+import { toast } from "react-toastify";
 
 export default function EditPage(props) {
   const { sun, mode } = useContext(ContextData);
@@ -57,8 +58,20 @@ export default function EditPage(props) {
 
     let response = await axios.put("/api/products/" + productId, data);
     if (response) {
-      alert("product updated successfully");
-      router.push("/products");
+      toast.success("Product Updated Successfully", {
+        style: {
+          backgroundColor: mode == sun ? "var(--lightg)" : "var(--lightblk)", // Use the CSS variable for the background color
+          color: mode == sun ? "var(--lightblk)" : "var(--ligcont)",
+          boxShadow:
+            mode == sun
+              ? "0 0 5px var(--lightg) inset"
+              : "0 0 5px var(--ligcont) inset", // Use the CSS variable for the text color
+        },
+        position: toast.POSITION.TOP_CENTER,
+      });
+      setTimeout(() => {
+        router.push("/products");
+      }, 2000);
     }
   };
 
